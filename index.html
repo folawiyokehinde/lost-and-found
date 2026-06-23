@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusFind – Lost & Found</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand" onclick="showPage('home')">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 9h8M8 13h5"/></svg>
+    </div>
+    <div class="nav-brand-text">
+      <strong>CampusFind</strong>
+      <span>Lost &amp; Found</span>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
+    <a onclick="showPage('found')" id="nav-found">Found Items</a>
+    <a onclick="showPage('report')" id="nav-report">Report Lost Item</a>
+    <a onclick="showPage('contact')" id="nav-contact">Contact</a>
+    <a onclick="showPage('report')" class="nav-cta">+ Report Item</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HOME PAGE ═══════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-tag">🎓 Campus Lost &amp; Found</div>
+      <h1 class="hero-title">Lost something? <span>We can help.</span></h1>
+      <p class="hero-sub">CampusFind helps students and staff find lost items and return them safely to their rightful owners.</p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="showPage('report')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Report Lost Item
+        </button>
+        <button class="btn btn-outline" onclick="showPage('found')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          View Found Items
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>248</strong><p>Items returned</p></div>
+        <div class="stat"><strong>94%</strong><p>Recovery rate</p></div>
+        <div class="stat"><strong>1.5k</strong><p>Happy students</p></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-circle">
+        <div class="hero-icon-grid">
+          <div class="hero-item-card"><span class="item-emoji">📱</span><span>Phone</span></div>
+          <div class="hero-item-card"><span class="item-emoji">🎒</span><span>Bag</span></div>
+          <div class="hero-item-card"><span class="item-emoji">🔑</span><span>Keys</span></div>
+          <div class="hero-item-card"><span class="item-emoji">💳</span><span>Wallet</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" style="background:var(--white);">
+    <div class="section-header">
+      <div class="section-label">Simple Process</div>
+      <h2 class="section-title">How CampusFind Works</h2>
+      <p class="section-sub">Three easy steps to reunite you with your lost belongings.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card" data-num="01">
+        <div class="how-icon">📋</div>
+        <h3>Report Your Loss</h3>
+        <p>Fill in the details of your lost item — name, category, description, and where you last had it.</p>
+      </div>
+      <div class="how-card" data-num="02">
+        <div class="how-icon">🔍</div>
+        <h3>We Search &amp; Match</h3>
+        <p>Our team checks submitted found items and notifies you when a match is discovered.</p>
+      </div>
+      <div class="how-card" data-num="03">
+        <div class="how-icon">🤝</div>
+        <h3>Collect &amp; Reunite</h3>
+        <p>Visit the Student Union Room 201 with your ID to safely collect your returned item.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Found Preview -->
+  <section class="section found-preview">
+    <div class="found-header-row">
+      <div>
+        <div class="section-label">Recently Logged</div>
+        <h2 class="section-title">Found Items</h2>
+        <p class="section-sub">These items have been turned in and are waiting to be claimed.</p>
+      </div>
+      <button class="btn btn-accent btn-sm" onclick="showPage('found')">View All →</button>
+    </div>
+    <div class="found-preview-grid">
+      <div class="item-card">
+        <div class="item-card-img">📱<span class="item-badge">Found</span></div>
+        <div class="item-card-body">
+          <h4>Phones</h4>
+          <div class="item-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Library, First Floor</div>
+          <div class="item-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 20, 2026</div>
+          <div class="contact-btn" onclick="showPage('contact')">💬 Contact Finder</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-card-img">🎧<span class="item-badge">Found</span></div>
+        <div class="item-card-body">
+          <h4>Sony Headphones</h4>
+          <div class="item-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Student Center</div>
+          <div class="item-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 19, 2026</div>
+          <div class="contact-btn" onclick="showPage('contact')">💬 Contact Finder</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-card-img">👛<span class="item-badge">Found</span></div>
+        <div class="item-card-body">
+          <h4>Wallets&amp;Bags</h4>
+          <div class="item-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Cafeteria</div>
+          <div class="item-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 18, 2026</div>
+          <div class="contact-btn" onclick="showPage('contact')">💬 Contact Finder</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-card-img">🔑<span class="item-badge">Found</span></div>
+        <div class="item-card-body">
+          <h4>Car Keys</h4>
+          <div class="item-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Parking Lot B</div>
+          <div class="item-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 17, 2026</div>
+          <div class="contact-btn" onclick="showPage('contact')">💬 Contact Finder</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section" style="background:var(--cream); text-align:center; padding:60px 5%;">
+    <div class="section-label" style="text-align:center;">Can't find what you're looking for?</div>
+    <h2 class="section-title" style="text-align:center; margin-bottom:10px;">Let us know — we'll help.</h2>
+    <p style="color:var(--muted); margin-bottom:28px; max-width:440px; margin-left:auto; margin-right:auto; line-height:1.6;">Our office team is ready to assist. Reach us by phone, email, or come visit us in person.</p>
+    <button class="btn btn-primary" onclick="showPage('contact')">Get In Touch</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>CampusFind</strong>
+        <p>Building a helpful and honest campus community, one item at a time.</p>
+        <div class="footer-socials">
+          <a href="#">𝕏</a>
+          <a href="#">in</a>
+          <a href="#">f</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('found')">Found Items</a>
+        <a onclick="showPage('report')">Report Lost Item</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <a>Electronics</a>
+        <a>Bags &amp; Wallets</a>
+        <a>Keys</a>
+        <a>Books &amp; Notes</a>
+        <a>Clothing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Reminder</h4>
+        <p style="font-size:0.82rem; line-height:1.6;">Always keep your belongings safe and report lost items as soon as possible.</p>
+        <p style="font-size:0.82rem; margin-top:10px; color:var(--green-accent); font-style:italic;">Together, we can help everyone!</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CampusFind. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Use</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════ REPORT LOST ITEM PAGE ═══════════════════════════ -->
+<div class="page" id="page-report">
+  <div class="report-page">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="section-label">Lost Something?</div>
+      <h1 style="font-family:'Playfair Display',serif; font-size:2rem; color:var(--green-deep); margin-bottom:32px;">Report a Lost Item</h1>
+    </div>
+    <div class="report-layout">
+      <div class="report-form-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+          <div style="width:38px;height:38px;background:var(--green-light);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">📋</div>
+          <h2 class="form-title">Report Lost Item</h2>
+        </div>
+        <p class="form-subtitle">Fill in the details of your lost item</p>
+
+        <div class="form-group">
+          <label class="form-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 9h8M8 13h5"/></svg>
+            Item Name
+          </label>
+          <input class="form-input" type="text" placeholder="e.g. iPhone 13, Black Wallet">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+            Category
+          </label>
+          <select class="form-select">
+            <option value="">Select category</option>
+            <option>Electronics</option>
+            <option>Bags &amp; Wallets</option>
+            <option>Keys &amp; Access Cards</option>
+            <option>Books &amp; Stationery</option>
+            <option>Clothing &amp; Accessories</option>
+            <option>Jewellery</option>
+            <option>Others</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Description
+          </label>
+          <textarea class="form-textarea" placeholder="Describe your item in detail — colour, brand, any identifying marks…"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              Last Seen Location
+            </label>
+            <input class="form-input" type="text" placeholder="Where did you last see it?">
+          </div>
+          <div class="form-group">
+            <label class="form-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Date Lost
+            </label>
+            <input class="form-input" type="date">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Your Contact
+          </label>
+          <input class="form-input" type="text" placeholder="Phone number or email address">
+        </div>
+
+        <button class="btn btn-primary form-submit" onclick="submitReport()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Submit Report
+        </button>
+        <div class="success-msg" id="report-success">
+          <span>✅</span> Your report has been submitted! We'll contact you when there's a match.
+        </div>
+      </div>
+
+      <div class="report-sidebar">
+        <div class="tip-card">
+          <h3>💡 Tips for a Better Report</h3>
+          <ul class="tip-list">
+            <li><span class="tip-dot"></span>Be as specific as possible — brand, colour, model number</li>
+            <li><span class="tip-dot"></span>Mention any unique scratches, stickers, or engravings</li>
+            <li><span class="tip-dot"></span>Report as soon as you notice the item is missing</li>
+            <li><span class="tip-dot"></span>Double-check the last location you were at on campus</li>
+            <li><span class="tip-dot"></span>Provide a reliable contact so we can reach you fast</li>
+          </ul>
+        </div>
+        <div style="background:var(--white); border:1px solid var(--border); border-radius:16px; padding:24px;">
+          <h3 style="font-size:1rem; font-weight:700; color:var(--green-deep); margin-bottom:12px;">📍 Drop-Off Locations</h3>
+          <p style="font-size:0.83rem; color:var(--muted); line-height:1.6; margin-bottom:8px;"><strong>Main Office:</strong> Student Union Building, Room 201</p>
+          <p style="font-size:0.83rem; color:var(--muted); line-height:1.6; margin-bottom:8px;"><strong>Library Desk:</strong> Ground Floor, Reception</p>
+          <p style="font-size:0.83rem; color:var(--muted); line-height:1.6;"><strong>Security Office:</strong> Gate A, 24/7</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-bottom" style="padding-top:24px; border-top:1px solid rgba(255,255,255,0.1);">
+      <span>© 2026 CampusFind. All rights reserved.</span>
+      <span><a style="color:var(--green-accent); cursor:pointer;" onclick="showPage('home')">← Back to Home</a></span>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════ FOUND ITEMS PAGE ═══════════════════════════ -->
+<div class="page" id="page-found">
+  <div class="found-page">
+    <div class="found-page-header">
+      <div>
+        <div class="section-label">Items Logged by Campus Staff</div>
+        <h1 class="found-page-title">Found Items</h1>
+      </div>
+      <div class="search-filter-bar">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" placeholder="Search items…" oninput="filterCards(this.value)">
+        </div>
+        <select class="filter-select" onchange="filterByCategory(this.value)">
+          <option value="">All Categories</option>
+          <option>Electronics</option>
+          <option>Bags &amp; Wallets</option>
+          <option>Keys</option>
+          <option>Clothing</option>
+          <option>Books</option>
+          <option>Others</option>
+        </select>
+      </div>
+    </div>
+    <p class="items-count">Showing <strong id="item-count">10</strong> found items</p>
+    <div class="found-grid" id="found-grid">
+      <!-- Cards injected by JS -->
+    </div>
+  </div>
+  <footer>
+    <div class="footer-bottom" style="padding-top:24px; border-top:1px solid rgba(255,255,255,0.1);">
+      <span>© 2026 CampusFind. All rights reserved.</span>
+      <a style="color:var(--green-accent); cursor:pointer;" onclick="showPage('home')">← Back to Home</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════ CONTACT PAGE ═══════════════════════════ -->
+<div class="page" id="page-contact">
+  <div class="contact-page">
+    <div class="contact-hero">
+      <h1>Get In Touch</h1>
+      <p>Can't find what you're looking for? Our team is here to help you track it down.</p>
+    </div>
+
+    <div class="contact-body">
+      <!-- Info -->
+      <div>
+        <div class="contact-info-card">
+          <h3 class="contact-info-title">Contact Information</h3>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <label>Email</label>
+              <p>campusfind@university.edu</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <label>Phone</label>
+              <p>+234 704 408 6914</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <label>Office Location</label>
+              <p>Student Union Building, Room 201</p>
+            </div>
+          </div>
+          <div class="hours-box">
+            <h4>🕐 Office Hours</h4>
+            <div class="hours-row"><span>Monday – Friday</span><strong>8:00 AM – 6:00 PM</strong></div>
+            <div class="hours-row"><span>Saturday</span><strong>10:00 AM – 3:00 PM</strong></div>
+            <div class="hours-row"><span>Sunday</span><strong>Closed</strong></div>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <span style="font-size:2rem;">🗺️</span>
+          Student Union Building, Room 201
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-card">
+        <h2 class="form-title">Send Us a Message</h2>
+        <p class="form-subtitle">We typically respond within 24 hours on working days</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input class="form-input" type="text" placeholder="John">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input class="form-input" type="text" placeholder="Doe">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input class="form-input" type="email" placeholder="john.doe@university.edu">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <select class="form-select">
+            <option>Looking for a lost item</option>
+            <option>Report a found item</option>
+            <option>General enquiry</option>
+            <option>Feedback</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" style="min-height:130px;" placeholder="Describe your enquiry in detail…"></textarea>
+        </div>
+
+        <button class="btn btn-primary form-submit" onclick="submitContact()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Message
+        </button>
+        <div class="success-msg" id="contact-success">
+          <span>✅</span> Your message has been sent! We'll get back to you soon.
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How long do you keep lost items? <span class="faq-chevron">▾</span></div>
+        <div class="faq-a">All found items are kept for a minimum of 30 days. High-value items such as electronics, ID cards, and wallets may be kept longer. After the holding period, unclaimed items are donated to campus charities.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What do I need to collect my item? <span class="faq-chevron">▾</span></div>
+        <div class="faq-a">Bring a valid student or staff ID to the office. You may also be asked to describe the item in detail or show proof of ownership (e.g. a photo on your phone, a receipt).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can someone else collect on my behalf? <span class="faq-chevron">▾</span></div>
+        <div class="faq-a">Yes — they must bring a signed authorisation letter from you, their own ID, and a copy of your student/staff ID.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What if my item isn't listed on this site? <span class="faq-chevron">▾</span></div>
+        <div class="faq-a">New items are added daily. You can also call or email us directly and one of our staff will physically check the storage room for you.</div>
+      </div>
+    </div>
+
+  </div>
+  <footer>
+    <div class="footer-bottom" style="padding-top:24px; border-top:1px solid rgba(255,255,255,0.1);">
+      <span>© 2026 CampusFind. All rights reserved.</span>
+      <a style="color:var(--green-accent); cursor:pointer;" onclick="showPage('home')">← Back to Home</a>
+    </div>
+  </footer>
+</div>
+
+     <script>
+  // ── FOUND ITEMS DATA ──
+  const allItems = [
+    { emoji:'📱', name:'iPhone 13 Pro', cat:'Electronics', loc:'Main Library, Floor 1', date:'May 20, 2026' },
+    { emoji:'🎧', name:'Sony WH-1000XM5', cat:'Electronics', loc:'Student Center', date:'May 19, 2026' },
+    { emoji:'👛', name:'Black Leather Wallet', cat:'Bags & Wallets', loc:'Cafeteria', date:'May 18, 2026' },
+    { emoji:'🔑', name:'Car Keys (Toyota)', cat:'Keys', loc:'Parking Lot B', date:'May 17, 2026' },
+    { emoji:'🎒', name:'Green Backpack', cat:'Bags & Wallets', loc:'Lecture Hall B3', date:'May 16, 2026' },
+    { emoji:'📚', name:'Calculus Textbook', cat:'Books', loc:'Science Block, Room 4', date:'May 15, 2026' },
+    { emoji:'⌚', name:'Apple Watch Series 8', cat:'Electronics', loc:'Sports Centre', date:'May 14, 2026' },
+    { emoji:'🧣', name:'Blue Scarf', cat:'Clothing', loc:'Admin Block Lobby', date:'May 13, 2026' },
+    { emoji:'💻', name:'Dell Laptop (14″)', cat:'Electronics', loc:'Computer Lab 2', date:'May 12, 2026' },
+    { emoji:'🕶️', name:'Ray-Ban Sunglasses', cat:'Other', loc:'Campus Canteen', date:'May 11, 2026' },
+  ];
+ 
+   function renderCards(items) {
+     const grid = document.getElementById('found-grid');
+    document.getElementById('item-count').textContent = items.length;
+     grid.innerHTML = items.map(item => `
+      <div class="found-card">
+         <div class="found-card-img">${item.emoji}<span class="item-badge">Found</span></div>
+         <div class="found-card-body">
+          <h4>${item.name}</h4>
+         <div class="found-meta">📍 ${item.loc}</div>
+  
+  <div class="found-meta">📅 ${item.date}</div>
+          <div class="found-contact-btn" onclick="showPage('contact')">💬 Contact Finder</div>
+         </div>
+       </div>
+     `).join('');
+   }
+ 
+   function filterCards(q) {
+     const filtered = allItems.filter(i =>
+       i.name.toLowerCase().includes(q.toLowerCase()) ||
+      i.loc.toLowerCase().includes(q.toLowerCase())
+     );
+     renderCards(filtered);
+  }
+ 
+   function filterByCategory(cat) {
+     const filtered = cat ? allItems.filter(i => i.cat.includes(cat)) : allItems;
+    renderCards(filtered);
+   }
+ 
+  // // ── PAGE ROUTING ──
+   function showPage(id) {
+     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+     document.getElementById('page-' + id).classList.add('active');
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (id === 'found') renderCards(allItems);
+   }
+ 
+  // // ── FORM SUBMIT HANDLERS ──
+   function submitReport() {
+     const msg = document.getElementById('report-success');
+     msg.classList.add('show');
+     setTimeout(() => msg.classList.remove('show'), 4000);
+  }
+   function submitContact() {
+     const msg = document.getElementById('contact-success');
+     msg.classList.add('show');
+    setTimeout(() => msg.classList.remove('show'), 4000);
+   }
+ 
+   // ── FAQ TOGGLE ──
+  function toggleFaq(el) {
+    const a = el.nextElementSibling;
+     el.classList.toggle('open');
+    a.classList.toggle('open');
+   }
+ 
+   Init
+  renderCards(allItems); 
+</script> 
+</body>
+</html>
